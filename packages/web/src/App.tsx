@@ -3,6 +3,12 @@ import { marked } from 'marked';
 import nunjucks from 'nunjucks';
 import defaultTemplate from '../../../themes/default/template.html?raw';
 import defaultStyle from '../../../themes/default/style.css?raw';
+import minimalTemplate from '../../../themes/minimal/template.html?raw';
+import minimalStyle from '../../../themes/minimal/style.css?raw';
+import elegantTemplate from '../../../themes/elegant/template.html?raw';
+import elegantStyle from '../../../themes/elegant/style.css?raw';
+import compactTemplate from '../../../themes/compact/template.html?raw';
+import compactStyle from '../../../themes/compact/style.css?raw';
 
 interface Basics {
   name?: string;
@@ -22,6 +28,9 @@ interface Theme {
 
 const THEMES: Record<string, Theme> = {
   default: { template: defaultTemplate, style: defaultStyle },
+  minimal: { template: minimalTemplate, style: minimalStyle },
+  elegant: { template: elegantTemplate, style: elegantStyle },
+  compact: { template: compactTemplate, style: compactStyle },
 };
 
 const LABELS: Record<string, Record<string, string>> = {

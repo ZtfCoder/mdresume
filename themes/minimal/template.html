@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ document.lang }}">
+<head>
+<meta charset="UTF-8">
+<title>{{ document.title }}</title>
+<style>{{ style }}</style>
+</head>
+<body>
+<main class="resume-page">
+  <header class="resume-header">
+    {% if basics and basics.name %}<h1 class="name">{{ basics.name }}</h1>{% endif %}
+    {% if basics and basics.headline %}<p class="headline">{{ basics.headline }}</p>{% endif %}
+    <div class="contacts">
+      {% if basics and basics.phone %}<span>{{ basics.phone }}</span>{% endif %}
+      {% if basics and basics.email %}<span><a href="mailto:{{ basics.email }}">{{ basics.email }}</a></span>{% endif %}
+      {% if basics and basics.location %}<span>{{ basics.location }}</span>{% endif %}
+      {% if basics and basics.website %}<span><a href="{{ basics.website }}">{{ basics.website }}</a></span>{% endif %}
+      {% if basics and basics.github %}<span><a href="{{ basics.github }}">{{ basics.github }}</a></span>{% endif %}
+    </div>
+    {% if basics and basics.summary %}<p class="summary">{{ basics.summary }}</p>{% endif %}
+  </header>
+  <article class="resume-content">
+    {{ contentHtml }}
+  </article>
+</main>
+</body>
+</html>

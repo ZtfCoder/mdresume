@@ -1,0 +1,106 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+
+.sidebar {
+  background: #2B3440;
+  color: #e8e8e8;
+  padding: 36px 20px;
+}
+
+.sidebar .name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.sidebar .headline {
+  font-size: 12px;
+  color: #adb5bd;
+  margin-bottom: 20px;
+}
+
+.sidebar .contact-section {
+  margin-bottom: 20px;
+}
+
+.sidebar .contact-section h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #adb5bd;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar .contacts {
+  list-style: none;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.sidebar .contacts strong {
+  display: block;
+  font-size: 10px;
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.sidebar .contacts a {
+  color: #e8e8e8;
+  text-decoration: none;
+}
+
+.sidebar .summary {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.resume-content {
+  padding: 36px 32px;
+}
+
+.resume-content h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2B3440;
+  margin: 18px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid #2B3440;
+}
+
+.resume-content h2:first-child {
+  margin-top: 0;
+}
+
+.resume-content h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 10px 0 3px;
+}
+
+.resume-content p { margin: 2px 0; font-size: 12px; }
+.resume-content ul { padding-left: 16px; margin: 3px 0; }
+.resume-content li { margin: 1px 0; font-size: 12px; }
+
+@page { size: A4; margin: 0; }
+@media print { body { background: #fff; } }

@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #222;
+  background: #fff;
+}
+
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 48px 52px;
+}
+
+.resume-header {
+  margin-bottom: 28px;
+}
+
+.resume-header .name {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.resume-header .headline {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.resume-header .contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.resume-header .contacts a {
+  color: #555;
+  text-decoration: none;
+}
+
+.resume-header .summary {
+  font-size: 13px;
+  color: #444;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.resume-content h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #222;
+  margin: 24px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #222;
+}
+
+.resume-content h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 12px 0 4px;
+}
+
+.resume-content p { margin: 3px 0; }
+.resume-content ul { padding-left: 18px; margin: 4px 0; }
+.resume-content li { margin: 2px 0; font-size: 13px; }
+
+@page { size: A4; margin: 0; }
+@media print { body { background: #fff; } }
