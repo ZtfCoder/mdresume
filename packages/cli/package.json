@@ -1,0 +1,21 @@
+{
+  "name": "@mdresume/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "mdresume": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@mdresume/core": "workspace:*",
+    "commander": "^12.1.0",
+    "puppeteer-core": "^24.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  }
+}

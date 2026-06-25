@@ -1,0 +1,14 @@
+{
+  "name": "mdresume",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev:web": "pnpm --filter @mdresume/web dev"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "puppeteer"
+    ]
+  }
+}

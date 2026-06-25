@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ document.lang }}">
+<head>
+<meta charset="UTF-8">
+<title>{{ document.title }}</title>
+<style>{{ style }}</style>
+</head>
+<body>
+<main class="resume-page">
+  <header class="resume-header">
+    <div class="header-main">
+      {% if basics and basics.name %}<h1 class="name">{{ basics.name }}</h1>{% endif %}
+      {% if basics and basics.headline %}<p class="headline">{{ basics.headline }}</p>{% endif %}
+      {% if basics and basics.summary %}<p class="summary">{{ basics.summary }}</p>{% endif %}
+    </div>
+    <ul class="contacts">
+      {% if basics and basics.phone %}<li><span class="label">{{ labels.phone }}</span><span class="value">{{ basics.phone }}</span></li>{% endif %}
+      {% if basics and basics.email %}<li><span class="label">{{ labels.email }}</span><a href="mailto:{{ basics.email }}">{{ basics.email }}</a></li>{% endif %}
+      {% if basics and basics.location %}<li><span class="label">{{ labels.location }}</span><span class="value">{{ basics.location }}</span></li>{% endif %}
+      {% if basics and basics.website %}<li><span class="label">{{ labels.website }}</span><a href="{{ basics.website }}">{{ basics.website }}</a></li>{% endif %}
+      {% if basics and basics.github %}<li><span class="label">{{ labels.github }}</span><a href="{{ basics.github }}">{{ basics.github }}</a></li>{% endif %}
+    </ul>
+  </header>
+  <article class="resume-content">
+    {{ contentHtml }}
+  </article>
+</main>
+</body>
+</html>
