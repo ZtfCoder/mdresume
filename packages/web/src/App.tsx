@@ -30,16 +30,13 @@ const LABELS: Record<string, Record<string, string>> = {
   en: { email: 'Email', phone: 'Phone', location: 'Location', website: 'Website', github: 'GitHub' },
 };
 
-/** Simple frontmatter parser (no Node deps) */
 function parseFrontmatter(md: string): { data: Record<string, any>; content: string } {
   const match = md.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return { data: {}, content: md };
   const yamlStr = match[1];
   const content = match[2];
-  // Simple YAML parser for flat/nested basics
   const data: Record<string, any> = {};
   let currentObj: Record<string, any> | null = null;
-  let currentKey = '';
   for (const line of yamlStr.split('\n')) {
     if (/^\s*#/.test(line) || !line.trim()) continue;
     const topMatch = line.match(/^(\w+):\s*(.*)$/);
@@ -51,7 +48,6 @@ function parseFrontmatter(md: string): { data: Record<string, any>; content: str
       } else {
         data[key] = {};
         currentObj = data[key] as Record<string, any>;
-        currentKey = key;
       }
     } else if (currentObj) {
       const subMatch = line.match(/^\s+(\w+):\s*(.+)$/);
@@ -142,18 +138,33 @@ export function App() {
   return (
     <div className="app">
       <div className="editor-panel">
-        <div className="toolbar">
-          <select value={themeName} onChange={(e) => setThemeName(e.target.value)}>
-            {Object.keys(THEMES).map((t) => (
-              <option key={t} value={t}>{t}</option>
-            ))}
-          </select>
-          <button onClick={() => document.getElementById('file-input')?.click()}>上传 Markdown</button>
-          <input id="file-input" type="file" accept=".md" onChange={handleUpload} style={{ display: 'none' }} />
-          <button onClick={handleExportPdf}>导出 PDF</button>
+        <div className="editor-header">
+          <div className="brand">
+            <h1>mdresume</h1>
+            <span>Markdown 简历</span>
+          </div>
+          <div className="toolbar">
+            <select value={themeName} onChange={(e) => setThemeName(e.target.value)}>
+              {Object.keys(THEMES).map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+            <button className="btn-secondary" onClick={() => document.getElementById('file-input')?.click()}>
+              <i className="fas fa-upload"></i> 上传
+            </button>
+            <input id="file-input" type="file" accept=".md" onChange={handleUpload} style={{ display: 'none' }} />
+            <button className="btn-accent" onClick={handleExportPdf}>
+              <i className="fas fa-file-pdf"></i> 导出 PDF
+            </button>
+          </div>
         </div>
-        <span className="upload-hint">编辑下方内容或上传 .md 文件</span>
-        <textarea value={md} onChange={(e) => setMd(e.target.value)} />
+        <div className="editor-hint">
+          <i className="fas fa-pen-nib"></i>
+          编辑 Markdown 或上传 .md 文件
+        </div>
+        <div className="editor-area">
+          <textarea value={md} onChange={(e) => setMd(e.target.value)} spellCheck={false} />
+        </div>
       </div>
       <div className="preview-panel">
         <div className="preview-frame" ref={previewRef} dangerouslySetInnerHTML={{ __html: html }} />
