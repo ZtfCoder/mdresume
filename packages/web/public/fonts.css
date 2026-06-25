@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/dm-serif-display-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('./fonts/source-sans-3-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/source-sans-3-latin-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/source-sans-3-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/jetbrains-mono-latin-400.woff2') format('woff2');
+}
